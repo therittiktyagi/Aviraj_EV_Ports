@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Charger Selector | Find Your Perfect EV Charger | AEP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .selector-wizard { max-width: 700px; margin: 56px auto; background: white; border-radius: 28px; box-shadow: var(--shadow); overflow: hidden; }
+    .selector-header { background: linear-gradient(135deg, var(--green), var(--cyan)); color: white; padding: 42px; text-align: center; }
+    .step-counter { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; opacity: .8; margin-bottom: 12px; }
+    .selector-header h2 { font-size: 28px; margin: 0; }
+    .selector-body { padding: 42px; }
+    .selector-step { display: none; }
+    .selector-step.active { display: block; animation: fadeIn .3s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .option-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 32px 0; }
+    .option-btn { padding: 20px; border: 2px solid var(--line); border-radius: 16px; background: white; cursor: pointer; font-family: Inter, sans-serif; font-weight: 700; font-size: 14px; color: var(--ink); transition: .25s; }
+    .option-btn:hover { border-color: var(--cyan); background: rgba(0, 168, 232, .06); }
+    .option-btn.selected { background: linear-gradient(135deg, var(--green), var(--cyan)); color: white; border-color: transparent; }
+    .selector-actions { display: flex; gap: 14px; margin-top: 32px; }
+    .selector-actions button { flex: 1; padding: 14px; border: none; border-radius: 999px; font-weight: 700; cursor: pointer; transition: .25s; }
+    .btn-prev { background: var(--line); color: var(--ink); }
+    .btn-prev:hover { background: var(--muted); color: white; }
+    .btn-next { background: linear-gradient(135deg, var(--green), var(--cyan)); color: white; }
+    .btn-next:disabled { opacity: .5; cursor: not-allowed; }
+    .result-card { background: linear-gradient(135deg, #f5fbfa, #e8f5f7); padding: 28px; border-radius: 20px; margin: 24px 0; border-left: 4px solid var(--cyan); }
+    .result-spec { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(0, 168, 232, .1); }
+    .result-spec:last-child { border: none; }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="AEP home">
+      <span class="brand-mark">AEP</span>
+      <span class="brand-text">Aviraj EV Ports</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="smart-platform.html">Smart Platform</a>
+      <a href="make-in-india.html">Make in India</a>
+      <a href="charger-selector.html">Charger Selector</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About AEP</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html#quote">Request a Quote</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="min-height: 40vh;">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid container" style="padding-top: 140px;">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Interactive Tool</p>
+          <h1 style="font-size: 48px;">Find your ideal charger</h1>
+          <p class="hero-subtitle">Answer 3 simple questions about your vehicle type, battery size, and installation location to get a personalized charger recommendation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="selector-wizard">
+          <div class="selector-header">
+            <p class="step-counter" id="stepCounter">Step 1 of 3</p>
+            <h2 id="stepTitle">What are you charging?</h2>
+          </div>
+          <div class="selector-body">
+            <!-- Step 1: Vehicle Type -->
+            <div class="selector-step active" id="step1">
+              <div class="option-grid">
+                <button class="option-btn" data-value="2w">🚲 Two-Wheelers</button>
+                <button class="option-btn" data-value="3w">🛺 Three-Wheelers</button>
+                <button class="option-btn" data-value="4w">🚗 Four-Wheelers</button>
+                <button class="option-btn" data-value="bus">🚌 Buses</button>
+              </div>
+            </div>
+
+            <!-- Step 2: Battery Size -->
+            <div class="selector-step" id="step2">
+              <div class="option-grid">
+                <button class="option-btn" data-value="1-3">1–3 kWh</button>
+                <button class="option-btn" data-value="3-7">3–7 kWh</button>
+                <button class="option-btn" data-value="15-80">15–80 kWh</button>
+                <button class="option-btn" data-value="100-400">100–400 kWh</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Location -->
+            <div class="selector-step" id="step3">
+              <div class="option-grid" style="grid-template-columns: 1fr;">
+                <button class="option-btn" data-value="home">🏠 Home</button>
+                <button class="option-btn" data-value="commercial">🏢 Commercial Parking</button>
+                <button class="option-btn" data-value="highway">🛣️ Highway / Fleet Hub</button>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div class="selector-step" id="step4">
+              <p style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: var(--green);">✓ Your Perfect Charger</p>
+              <div id="resultContent"></div>
+              <div class="selector-actions">
+                <button class="selector-actions button btn-prev" onclick="resetSelector()">Start Over</button>
+                <a class="btn btn-primary" href="contact.html#quote" style="flex: 1; text-align: center; display: flex; align-items: center; justify-content: center;">Request Quote</a>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="selector-actions" id="navActions">
+              <button class="btn-prev" onclick="prevStep()" style="display: none;">← Back</button>
+              <button class="btn-next" id="nextBtn" onclick="nextStep()" disabled>Next Step →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container section-heading reveal">
+        <p class="eyebrow">Need Expert Guidance?</p>
+        <h2>Talk to our team</h2>
+        <p>Our EV charging experts can help you evaluate your specific requirements and recommend the best deployment strategy for your location and use case.</p>
+        <a class="btn btn-primary" href="contact.html#quote">Schedule a Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Aviraj EV Ports Limited</strong>
+        <p>B-5, Tyagi Shopping Complex, Tyagi Vihar, Nangloi, Delhi-110041</p>
+      </div>
+      <div>
+        <a href="tel:+918810500002">+91 8810500002</a>
+        <a href="mailto:info@avirajevport.com">info@avirajevport.com</a>
+        <a href="https://www.avirajevport.com">www.avirajevport.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    let currentStep = 1;
+    const selections = {};
+    const recommendations = {
+      "2w-1-3-home": { model: "AC001 (3.3kW – Single Socket)", power: "3.3 kW", connector: "IEC 60309", use: "Home charging for 2-wheelers", time: "Full charge: 2–4 hrs" },
+      "2w-1-3-commercial": { model: "AC001 (3.3kW – Triple Sockets)", power: "10 kW (3 outlets)", connector: "3x IEC 60309", use: "Fleet parking / commercial hub", time: "Multiple simultaneous charges" },
+      "3w-3-7-home": { model: "AC001 (3.3kW – Single Socket)", power: "3.3 kW", connector: "IEC 60309", use: "Home charging for 3-wheelers", time: "Full charge: 3–6 hrs" },
+      "3w-3-7-commercial": { model: "AC001 (3.3kW – Triple Sockets) or AC Hybrid", power: "10 kW / 14 kW", connector: "IEC 60309 / Type 2", use: "Commercial charging hub", time: "Flexible fast charging" },
+      "4w-15-80-home": { model: "AC Type 2 (7.2kW)", power: "7.2 kW", connector: "IEC 62196 Type 2", use: "Residential 4-wheeler charging", time: "Full charge: 8–15 hrs" },
+      "4w-15-80-commercial": { model: "AC Type 2 (22kW) or AC Hybrid (14kW)", power: "22 kW / 14 kW", connector: "Type 2 / Hybrid", use: "Commercial parking, offices, malls", time: "Fast charging: 1–3 hrs" },
+      "4w-15-80-highway": { model: "DC CCS2 (60kW / 120kW)", power: "60–120 kW", connector: "CCS2", use: "Highway fast-charging corridor", time: "20–30 min charge (80%)" },
+      "bus-100-400-commercial": { model: "AC Type 2 (22kW) – Depot Charging", power: "22 kW", connector: "IEC 62196 Type 2", use: "Bus fleet depot charging (overnight)", time: "Overnight charge" },
+      "bus-100-400-highway": { model: "DC CCS2 (180kW / 240kW)", power: "180–240 kW", connector: "CCS2", use: "Highway fast-charging for long-distance buses", time: "30–45 min charge (80%)" },
+    };
+
+    document.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const stepId = `step${currentStep}`;
+        document.querySelectorAll(`#${stepId} .option-btn`).forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+        selections[`step${currentStep}`] = this.dataset.value;
+        document.getElementById('nextBtn').disabled = false;
+      });
+    });
+
+    function nextStep() {
+      if (currentStep < 3) {
+        document.getElementById(`step${currentStep}`).classList.remove('active');
+        currentStep++;
+        document.getElementById(`step${currentStep}`).classList.add('active');
+        document.getElementById('stepCounter').textContent = `Step ${currentStep} of 3`;
+        
+        const titles = ["What are you charging?", "What is the battery size?", "Where will it be installed?"];
+        document.getElementById('stepTitle').textContent = titles[currentStep - 1];
+        
+        document.getElementById('nextBtn').textContent = currentStep === 3 ? 'Get Recommendation →' : 'Next Step →';
+        
+        if (currentStep > 1) {
+          document.querySelector('.btn-prev').style.display = 'block';
+        }
+      } else {
+        showResult();
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        document.getElementById(`step${currentStep}`).classList.remove('active');
+        currentStep--;
+        document.getElementById(`step${currentStep}`).classList.add('active');
+        document.getElementById('stepCounter').textContent = `Step ${currentStep} of 3`;
+        
+        const titles = ["What are you charging?", "What is the battery size?", "Where will it be installed?"];
+        document.getElementById('stepTitle').textContent = titles[currentStep - 1];
+        
+        document.getElementById('nextBtn').textContent = currentStep === 3 ? 'Get Recommendation →' : 'Next Step →';
+        
+        if (currentStep === 1) {
+          document.querySelector('.btn-prev').style.display = 'none';
+        }
+      }
+    }
+
+    function showResult() {
+      const key = `${selections.step1}-${selections.step2}-${selections.step3}`;
+      const rec = recommendations[key] || {
+        model: "AC Type 2 (22kW) – General Purpose",
+        power: "22 kW",
+        connector: "IEC 62196 Type 2",
+        use: "Commercial / Workplace charging",
+        time: "1–3 hrs typical charge"
+      };
+
+      document.getElementById('resultContent').innerHTML = `
+        <div class="result-card">
+          <div style="font-size: 22px; font-weight: 800; color: var(--green); margin-bottom: 14px;">${rec.model}</div>
+          <div class="result-spec"><span>Power Output</span><span style="font-weight: 700;">${rec.power}</span></div>
+          <div class="result-spec"><span>Connector Type</span><span style="font-weight: 700;">${rec.connector}</span></div>
+          <div class="result-spec"><span>Use Case</span><span style="font-weight: 700;">${rec.use}</span></div>
+          <div class="result-spec"><span>Typical Charge Time</span><span style="font-weight: 700;">${rec.time}</span></div>
+        </div>
+      `;
+
+      document.getElementById('navActions').style.display = 'none';
+      document.getElementById(`step${currentStep}`).classList.remove('active');
+      document.getElementById('step4').classList.add('active');
+      document.getElementById('stepCounter').textContent = 'Complete';
+      document.getElementById('stepTitle').textContent = 'Your Perfect Match';
+    }
+
+    function resetSelector() {
+      currentStep = 1;
+      Object.keys(selections).forEach(key => delete selections[key]);
+      document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+      document.getElementById('navActions').style.display = 'flex';
+      document.getElementById('step4').classList.remove('active');
+      document.getElementById('step1').classList.add('active');
+      document.getElementById('stepCounter').textContent = 'Step 1 of 3';
+      document.getElementById('stepTitle').textContent = 'What are you charging?';
+      document.getElementById('nextBtn').textContent = 'Next Step →';
+      document.getElementById('nextBtn').disabled = true;
+      document.querySelector('.btn-prev').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

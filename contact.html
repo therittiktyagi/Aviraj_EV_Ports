@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact AEP | Aviraj EV Ports Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin: 56px 0; }
+    .contact-form-group { margin-bottom: 20px; }
+    .contact-form-group label { display: block; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+    .contact-form-group input, .contact-form-group select, .contact-form-group textarea {
+      width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 8px; font-family: Inter, sans-serif; font-size: 14px;
+    }
+    .contact-form-group textarea { resize: vertical; min-height: 100px; }
+    .contact-form-group input:focus, .contact-form-group select:focus, .contact-form-group textarea:focus {
+      outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0, 168, 232, .1);
+    }
+    .contact-info-block { display: flex; gap: 16px; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+    .contact-info-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(0, 168, 232, .1); display: grid; place-items: center; font-size: 22px; flex-shrink: 0; }
+    .contact-info-content h3 { margin: 0 0 4px; font-size: 14px; font-weight: 700; }
+    .contact-info-content p { margin: 0; color: var(--muted); font-size: 14px; }
+    @media (max-width: 960px) { .contact-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="AEP home">
+      <span class="brand-mark">AEP</span>
+      <span class="brand-text">Aviraj EV Ports</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="smart-platform.html">Smart Platform</a>
+      <a href="make-in-india.html">Make in India</a>
+      <a href="charger-selector.html">Charger Selector</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About AEP</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html#quote">Request a Quote</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="min-height: 40vh;">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid container" style="padding-top: 140px;">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Get in Touch</p>
+          <h1 style="font-size: 54px;">Contact AEP</h1>
+          <p class="hero-subtitle">Ready to explore AEP chargers, discuss partnerships, or request a demo? Our team is here to help.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <h2 style="margin-top: 0;">Send us a message</h2>
+            <div class="contact-form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="contact-form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="contact-form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="contact-form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" />
+            </div>
+            <div class="contact-form-group">
+              <label for="product">Interested Product *</label>
+              <select id="product" name="product" required>
+                <option value="">Select a product</option>
+                <option value="AC001">AC001 (3.3–10kW)</option>
+                <option value="AC Type 2">AC Type 2 (7.2–22kW)</option>
+                <option value="AC Hybrid">AC Hybrid (14kW)</option>
+                <option value="DC CCS2">DC CCS2 (30–240kW)</option>
+                <option value="DC001">DC001 GB/T (15–30kW)</option>
+                <option value="Smart Platform">Smart Platform / OCPP Software</option>
+                <option value="Other">Other / General Inquiry</option>
+              </select>
+            </div>
+            <div class="contact-form-group">
+              <label for="location">Installation Location</label>
+              <input type="text" id="location" name="location" placeholder="City or region" />
+            </div>
+            <div class="contact-form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+
+          <div id="quote">
+            <h2>Get a Quote</h2>
+            <p style="color: var(--muted);">Fill out the form and we'll provide a customized quote for your EV charging project within 48 hours.</p>
+
+            <div class="contact-info-block">
+              <div class="contact-info-icon">📍</div>
+              <div class="contact-info-content">
+                <h3>Headquarters</h3>
+                <p>B-5, Tyagi Shopping Complex</p>
+                <p>Tyagi Vihar, Nangloi, Delhi-110041</p>
+                <p><strong>India</strong></p>
+              </div>
+            </div>
+
+            <div class="contact-info-block">
+              <div class="contact-info-icon">📞</div>
+              <div class="contact-info-content">
+                <h3>Phone</h3>
+                <p><a href="tel:+918810500002" style="color: var(--cyan); font-weight: 700;">+91 8810500002</a></p>
+                <p style="margin-top: 4px; font-size: 12px;">Available Monday–Friday, 9 AM–6 PM IST</p>
+              </div>
+            </div>
+
+            <div class="contact-info-block">
+              <div class="contact-info-icon">✉️</div>
+              <div class="contact-info-content">
+                <h3>Email</h3>
+                <p><a href="mailto:info@avirajevport.com" style="color: var(--cyan); font-weight: 700;">info@avirajevport.com</a></p>
+                <p style="margin-top: 4px; font-size: 12px;">We respond to all inquiries within 24 hours</p>
+              </div>
+            </div>
+
+            <div class="contact-info-block">
+              <div class="contact-info-icon">🌐</div>
+              <div class="contact-info-content">
+                <h3>Website</h3>
+                <p><a href="https://www.avirajevport.com" style="color: var(--cyan); font-weight: 700;">www.avirajevport.com</a></p>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, var(--green), #092620); color: white; padding: 20px; border-radius: 16px; margin-top: 28px;">
+              <h3 style="margin-top: 0; color: white;">20+ Service Centers</h3>
+              <p style="color: rgba(255, 255, 255, .8);">AEP has a robust sales and service network spanning 20+ cities across India. Find a center near you and get local support for installation, maintenance, and troubleshooting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container section-heading reveal">
+        <p class="eyebrow">Partnership Opportunities</p>
+        <h2>Become an AEP Partner</h2>
+        <p>AEP is actively seeking CPO partners, dealers, and system integrators. Let's collaborate to scale EV charging across India and beyond.</p>
+        <a class="btn btn-primary" href="mailto:info@avirajevport.com?subject=Partnership Inquiry - AEP">Inquire About Partnerships</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Aviraj EV Ports Limited</strong>
+        <p>B-5, Tyagi Shopping Complex, Tyagi Vihar, Nangloi, Delhi-110041</p>
+      </div>
+      <div>
+        <a href="tel:+918810500002">+91 8810500002</a>
+        <a href="mailto:info@avirajevport.com">info@avirajevport.com</a>
+        <a href="https://www.avirajevport.com">www.avirajevport.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const formData = new FormData(form);
+      
+      console.log('Form data:', Object.fromEntries(formData));
+      alert('Thank you! Your inquiry has been submitted. We will contact you within 24 hours.');
+      form.reset();
+    }
+  </script>
+</body>
+</html>

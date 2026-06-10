@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart OCPP Platform | Aviraj EV Ports Limited</title>
+  <meta name="description" content="Cloud-based OCPP v1.6 roaming. EV user app (Android/iOS) with QR/RFID/OTP. CPO centralized console with tariff, analytics, and firmware management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .feature-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin: 56px 0; align-items: center; }
+    .feature-showcase h3 { font-size: 28px; margin-bottom: 20px; }
+    .feature-list-col { list-style: none; padding: 0; }
+    .feature-list-col li { padding: 14px 0 14px 36px; position: relative; color: var(--muted); }
+    .feature-list-col li:before { content: '✓'; position: absolute; left: 0; color: var(--cyan); font-weight: 900; font-size: 18px; }
+    .app-mockup { width: 260px; height: 520px; margin: 0 auto; border-radius: 32px; background: linear-gradient(135deg, #fff, #e8f2f4); box-shadow: 0 40px 80px rgba(0,0,0,.2); position: relative; overflow: hidden; }
+    .app-mockup:before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 30px; background: #123f33; }
+    .app-screen { padding: 42px 18px 22px; height: 100%; display: grid; place-items: center; }
+    .app-content { text-align: center; }
+    .app-content p { color: var(--muted); font-size: 13px; margin: 8px 0; }
+    @media (max-width: 960px) { .feature-showcase { grid-template-columns: 1fr; gap: 40px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html" aria-label="AEP home">
+      <span class="brand-mark">AEP</span>
+      <span class="brand-text">Aviraj EV Ports</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="smart-platform.html">Smart Platform</a>
+      <a href="make-in-india.html">Make in India</a>
+      <a href="charger-selector.html">Charger Selector</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About AEP</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html#quote">Request a Quote</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="min-height: 50vh;">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid container" style="padding-top: 140px;">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Smart Platform</p>
+          <h1 style="font-size: 54px;">Intelligence behind every charge</h1>
+          <p class="hero-subtitle">Cloud-based OCPP v1.6 roaming, white-labeled or co-branded software, and strong operational support for EV user apps and CPO dashboards.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container section-heading reveal">
+        <p class="eyebrow">Platform Architecture</p>
+        <h2>One system, two perfect interfaces</h2>
+        <p>AEP's platform connects EV drivers with CPOs (Charging Point Operators) through a centralized OCPP network with role-specific apps and full operational control.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="feature-showcase">
+          <div class="reveal">
+            <p class="eyebrow">For EV Users</p>
+            <h3>Mobile App (Android & iOS)</h3>
+            <p style="color: var(--muted); margin-bottom: 24px;">Find, authenticate, and charge your vehicle on any connected AEP charger. Manage payments, view history, and get real-time notifications.</p>
+            <ul class="feature-list-col">
+              <li><strong>QR / RFID / OTP Authentication</strong> – Multiple secure login options</li>
+              <li><strong>Charger Discovery & Filters</strong> – Location, power, and amenity-based search</li>
+              <li><strong>Start / Stop Charging</strong> – Single-tap control with live status</li>
+              <li><strong>Auto-Invoicing & Payments</strong> – Built-in billing with multiple payment modes</li>
+              <li><strong>Profile Management</strong> – Save vehicles, payment methods, and preferences</li>
+              <li><strong>In-App Notifications</strong> – Charging progress, offers, and support alerts</li>
+              <li><strong>Help & Support</strong> – Direct access to AEP support team</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <div class="app-mockup">
+              <div class="app-screen">
+                <div class="app-content">
+                  <p style="font-size: 11px; text-transform: uppercase; font-weight: 700; color: var(--cyan);">EV User App</p>
+                  <p style="font-size: 28px; margin: 12px 0; font-family: Montserrat; font-weight: 800; color: var(--green);">Find & Charge</p>
+                  <p>🚗 Location</p>
+                  <p>⚡ Power Level</p>
+                  <p>💳 Payment</p>
+                  <p style="font-size: 12px; margin-top: 20px; color: #999;">Available on App Store & Play Store</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="feature-showcase">
+          <div class="reveal" style="order: 2;">
+            <p class="eyebrow">For CPOs (Station Operators)</p>
+            <h3>Centralized Web Console</h3>
+            <p style="color: var(--muted); margin-bottom: 24px;">Complete operational control: onboard chargers, manage tariffs, monitor performance in real-time, and optimize revenue across your network.</p>
+            <ul class="feature-list-col">
+              <li><strong>Charger Onboarding</strong> – Fast setup and registration of new stations</li>
+              <li><strong>Station Listing with Amenities</strong> – Rich location details and facility info</li>
+              <li><strong>Tariff Management</strong> – Dynamic pricing, peak/off-peak rates, discounts</li>
+              <li><strong>Remote Operations & Control</strong> – Start/stop, reboot, and manage chargers remotely</li>
+              <li><strong>Analytics Dashboard</strong> – Energy consumed, revenue, footfall, session data</li>
+              <li><strong>Payment Settlement</strong> – Automated billing and reconciliation</li>
+              <li><strong>Firmware Management</strong> – Over-the-air updates and device maintenance</li>
+            </ul>
+          </div>
+          <div class="reveal" style="order: 1;">
+            <div class="dashboard-mock" style="box-shadow: 0 40px 100px rgba(0,0,0,.2);">
+              <div class="mock-header" style="background: linear-gradient(135deg, var(--green), var(--cyan));"></div>
+              <div style="padding: 20px;">
+                <div class="mock-stats"><span style="background: linear-gradient(135deg, rgba(0,168,232,.2), rgba(27,77,62,.2));"></span><span style="background: linear-gradient(135deg, rgba(0,168,232,.2), rgba(27,77,62,.2));"></span><span style="background: linear-gradient(135deg, rgba(0,168,232,.2), rgba(27,77,62,.2));"></span></div>
+                <div class="mock-chart" style="height: 160px;"></div>
+                <div class="mock-list"><span></span><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading reveal" style="margin-bottom: 56px;">
+          <p class="eyebrow">Platform Capabilities</p>
+          <h2>Enterprise-grade infrastructure</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+          <article class="product-card reveal">
+            <span class="product-kicker">Cloud-Native</span>
+            <h3>Fully Hosted</h3>
+            <p style="color: var(--muted);">No on-premise infrastructure needed. Scale from 1 charger to 1000+ stations with elastic cloud compute.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">White-Label</span>
+            <h3>Co-Branded Options</h3>
+            <p style="color: var(--muted);">Customize app UI, console themes, and branding to match your corporate identity while leveraging AEP's backend.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">OCPP v1.6</span>
+            <h3>Industry Standard</h3>
+            <p style="color: var(--muted);">Full roaming support with interoperability across networks, global charger connectivity, and real-time session management.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">Security</span>
+            <h3>Bank-Grade</h3>
+            <p style="color: var(--muted);">End-to-end encryption, SSL/TLS, secure payment tokenization, and compliance with PCI-DSS standards.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">Analytics</span>
+            <h3>Real-Time Insights</h3>
+            <p style="color: var(--muted);">Live dashboards, historical reports, predictive maintenance alerts, and revenue forecasting tools.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">Support</span>
+            <h3>24/7 Operations</h3>
+            <p style="color: var(--muted);">Dedicated support team, technical onboarding, training, and SLA-backed uptime guarantees.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container reveal">
+        <h2>Ready to launch a connected charging network?</h2>
+        <p>AEP can white-label our platform or integrate with your existing stack. Talk to us about pilot programs and CPO partnerships.</p>
+        <a class="btn btn-light" href="contact.html#quote">Request a Platform Demo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Aviraj EV Ports Limited</strong>
+        <p>B-5, Tyagi Shopping Complex, Tyagi Vihar, Nangloi, Delhi-110041</p>
+      </div>
+      <div>
+        <a href="tel:+918810500002">+91 8810500002</a>
+        <a href="mailto:info@avirajevport.com">info@avirajevport.com</a>
+        <a href="https://www.avirajevport.com">www.avirajevport.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

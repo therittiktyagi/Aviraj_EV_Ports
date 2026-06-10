@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sustainability & COP26 | Aviraj EV Ports Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .sustainability-hero { background: linear-gradient(135deg, #1b4d3e, #051614); color: white; }
+    .calculator { max-width: 600px; margin: 56px auto; background: white; padding: 40px; border-radius: 28px; box-shadow: var(--shadow); }
+    .calculator h3 { color: var(--green); margin: 0 0 24px; font-size: 22px; }
+    .calc-input { display: grid; gap: 14px; margin: 24px 0; }
+    .calc-input label { font-weight: 700; color: var(--ink); }
+    .calc-input input { padding: 12px; border: 1px solid var(--line); border-radius: 8px; font-family: Inter, sans-serif; }
+    .calc-result { background: linear-gradient(135deg, #f5fbfa, #e8f5f7); padding: 24px; border-radius: 16px; margin-top: 28px; border-left: 4px solid var(--cyan); }
+    .calc-result .result-num { font-size: 28px; font-weight: 800; color: var(--green); }
+    .calc-result .result-label { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html"><span class="brand-mark">AEP</span><span class="brand-text">Aviraj EV Ports</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a><a href="solutions.html">Solutions</a><a href="smart-platform.html">Smart Platform</a>
+      <a href="make-in-india.html">Make in India</a><a href="charger-selector.html">Charger Selector</a>
+      <a href="sustainability.html">Sustainability</a><a href="resources.html">Resources</a>
+      <a href="about.html">About AEP</a><a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html#quote">Request a Quote</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero sustainability-hero" style="min-height: 50vh;">
+      <div class="hero-grid container" style="padding-top: 140px;">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Climate Action</p>
+          <h1 style="font-size: 54px;">India's Sustainable Mobility</h1>
+          <p class="hero-subtitle">Aligned with the COP26 Panchamrit commitment, AEP enables India's transition to clean energy through scalable EV charging infrastructure.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section section-light">
+      <div class="container section-heading reveal">
+        <p class="eyebrow">COP26 Panchamrit Pledge</p>
+        <h2>India's five elements for climate action</h2>
+        <p>At COP26, Prime Minister Modi presented the Panchamrit—five nectar elements representing India's commitment to combat climate change. Sustainable mobility is a linchpin in this pledge, and EV charging infrastructure is the catalyst.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+          <article class="product-card reveal">
+            <span class="product-kicker">Element 1</span><h3>Renewable Energy</h3>
+            <p style="color: var(--muted);">AEP chargers integrate with solar, wind, and grid-scale renewables to deliver clean charging to EVs nationwide.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">Element 2</span><h3>Energy Efficiency</h3>
+            <p style="color: var(--muted);">95%+ efficient DC chargers and optimized power management reduce energy losses compared to traditional fuel.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">Element 3</span><h3>Zero Emissions</h3>
+            <p style="color: var(--muted);">EVs powered by AEP chargers eliminate tailpipe emissions, improving air quality in Indian cities and towns.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">Element 4</span><h3>Local Manufacturing</h3>
+            <p style="color: var(--muted);">AEP chargers are made in India (Delhi, Noida), reducing carbon footprint from imports and building local capability.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">Element 5</span><h3>Jobs & Growth</h3>
+            <p style="color: var(--muted);">AEP's growth creates skilled manufacturing, service, and technology jobs across 20+ Indian cities.</p>
+          </article>
+          <article class="product-card reveal">
+            <span class="product-kicker">Impact</span><h3>Global Leadership</h3>
+            <p style="color: var(--muted);">Positioning India as a clean mobility innovator in alignment with global climate commitments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-light">
+      <div class="container">
+        <div class="calculator reveal">
+          <h3>🌍 Carbon Impact Calculator</h3>
+          <p style="color: var(--muted); margin: 0 0 20px;">Estimate how many CO2 emissions you offset by charging with AEP chargers.</p>
+          <div class="calc-input">
+            <label>Monthly Charging Sessions</label>
+            <input type="number" id="sessions" placeholder="e.g., 50" min="1" value="50" />
+          </div>
+          <div class="calc-input">
+            <label>Avg. Energy per Session (kWh)</label>
+            <input type="number" id="energy" placeholder="e.g., 10" min="0.5" step="0.5" value="10" />
+          </div>
+          <div class="calc-input">
+            <label>Vehicle Type Baseline</label>
+            <select id="baseline" onchange="calculateImpact()">
+              <option value="auto">Auto/Rickshaw (1.5L/100km)</option>
+              <option value="bike">Bike (3L/100km)</option>
+              <option value="car">Car (5L/100km)</option>
+              <option value="bus">Bus (20L/100km)</option>
+            </select>
+          </div>
+          <div id="result" class="calc-result" style="display: none;">
+            <div class="result-num" id="coSaved">0 kg</div>
+            <div class="result-label">CO₂ Saved per Month</div>
+            <div class="result-num" id="treesEq" style="margin-top: 16px; font-size: 20px;">0 trees</div>
+            <div class="result-label">Equivalent to Planting Trees</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="final-cta">
+      <div class="container reveal">
+        <h2>Join India's clean mobility revolution</h2>
+        <p>Invest in AEP charging infrastructure and make a measurable impact on carbon reduction and climate action.</p>
+        <a class="btn btn-light" href="contact.html#quote">Start Your Green Project</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><strong>Aviraj EV Ports Limited</strong><p>B-5, Tyagi Shopping Complex, Tyagi Vihar, Nangloi, Delhi-110041</p></div>
+      <div><a href="tel:+918810500002">+91 8810500002</a><a href="mailto:info@avirajevport.com">info@avirajevport.com</a><a href="https://www.avirajevport.com">www.avirajevport.com</a></div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    function calculateImpact() {
+      const sessions = parseFloat(document.getElementById('sessions').value) || 50;
+      const energy = parseFloat(document.getElementById('energy').value) || 10;
+      const baselines = { auto: 0.15, bike: 0.30, car: 0.50, bus: 2.0 };
+      const baseline = baselines[document.getElementById('baseline').value] || 0.15;
+      const monthlyKwh = sessions * energy;
+      const coSaved = monthlyKwh * 0.82; // avg grid CO2 intensity
+      const trees = Math.round(coSaved / 21); // 1 tree absorbs ~21kg CO2/year
+      document.getElementById('coSaved').textContent = coSaved.toFixed(0) + ' kg';
+      document.getElementById('treesEq').textContent = trees + ' trees';
+      document.getElementById('result').style.display = 'block';
+    }
+    document.getElementById('sessions').addEventListener('change', calculateImpact);
+    document.getElementById('energy').addEventListener('change', calculateImpact);
+    calculateImpact();
+  </script>
+</body>
+</html>
